@@ -21,8 +21,8 @@ jobs:
 
       # Install cmake, build-essential since gem build with native extension needs it
       - run
-        name: Remove apt list
-        command: sudo rm -rf /var/lib/apt/lists/* && sudo apt update
+          name: Remove apt list
+          command: sudo rm -rf /var/lib/apt/lists/* && sudo apt update
 
       - run:
           name: Install cmake needed by rugged
