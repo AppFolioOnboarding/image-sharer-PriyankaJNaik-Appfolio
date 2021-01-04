@@ -20,7 +20,7 @@ jobs:
       - checkout
 
       # Install cmake, build-essential since gem build with native extension needs it
-      - run
+      - run:
           name: Remove apt list
           command: sudo rm -rf /var/lib/apt/lists/* && sudo apt update
 
