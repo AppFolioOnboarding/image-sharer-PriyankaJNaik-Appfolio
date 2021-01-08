@@ -1,3 +1,7 @@
 class WelcomeController < ApplicationController
-  def index; end
+  def index
+    if params[:image_url]
+      
+    end
+  end
 end
