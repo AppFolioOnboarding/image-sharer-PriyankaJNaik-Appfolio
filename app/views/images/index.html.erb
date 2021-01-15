@@ -27,7 +27,7 @@
 <h3> Submit your image URLs here </h3>
 <br />
 <br />
-<%= form_with url: images_path do |f| %>
+<%= form_with url: '/images' do |f| %>
 
   <%= f.label :Image_URL %> &nbsp;&nbsp;
   <%= f.url_field :image_url %> &nbsp;&nbsp;
