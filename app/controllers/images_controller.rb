@@ -11,6 +11,9 @@ class ImagesController < ApplicationController
       image = Image.new;
       image = Image.create(image_url: params[:image_url]);
       image.save;
+      flash[:saved_image] = "The image was saved!";
+      @data_item = image.image_url;
+
     end
   end
 
