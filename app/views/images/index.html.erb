@@ -31,11 +31,18 @@
 
   <%= f.label :Image_URL %> &nbsp;&nbsp;
   <%= f.url_field :image_url %> &nbsp;&nbsp;
-
+  <br/>
+  <%= f.label :Tag %>
+  <%= f.text_field :tag %>
   <%= f.submit "Save" %>
 
 <% end %>
 
+<br/>
+<% @all_images.each do |image| %>
+
+<%= image_tag(image.image_url, style: 'width: 400px') %><br/>
+<% end %>
 
 </body>
 </html>
