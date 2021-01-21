@@ -29,8 +29,13 @@
 <br />
 <%= flash[:saved_image] %>
 <br />
-<%= image_tag(@data_item)%>
-
+<%= image_tag(@data_item.image_url)%>
+<p>
+  <b>Tags: </b>
+  <% @data_item.tag_list.each do |tag| %>
+    <%= tag %>
+  <% end %></p>
+<br/>
 
 </body>
 </html>
