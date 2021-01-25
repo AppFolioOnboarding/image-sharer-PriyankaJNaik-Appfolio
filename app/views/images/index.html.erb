@@ -40,13 +40,12 @@
 
 <br/>
 <% @all_images.each do |image| %>
-
-<%= image_tag(image.image_url, style: 'width: 400px') %>
+    <%= image_tag(image.image_url, style: 'width: 400px') %>
     <b>Tags: </b>
     <% image.tag_list.each do |tag| %>
       <%= tag %>&nbsp;
     <% end %>
-  <br/>
+    <br/>
 <% end %>
 
 </body>
