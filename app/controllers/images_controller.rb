@@ -2,15 +2,18 @@ require 'image'
 
 class ImagesController < ApplicationController
   def index
-    puts 'Here we are';
-
-    @all_images = Image.all.to_a.sort_by{ |a| a[:id] }.reverse;
+    if params[:tagName]
+      tag = params[:tagName]
+      puts 'Searching images with tag... ' + tag
+      @search_results = Image.tagged_with(tag).to_a.sort_by{ |a| a[:id] }.reverse
+      @search_tag = tag
+    end
+    @all_images = Image.all.to_a.sort_by{ |a| a[:id] }.reverse
   end
 
   def save
-    puts 'Here we are at save';
     if params[:image_url]
-      puts 'We are in the Save method of Welcome controller ' + params[:image_url];
+      puts 'Saving the image URL... ' + params[:image_url];
       image = Image.new;
       image = Image.create(image_url: params[:image_url]);
       image.tag_list.add(params[:tag], parse: true);
@@ -18,8 +21,12 @@ class ImagesController < ApplicationController
       flash[:saved_image] = "The image was saved!";
 
       @data_item = image;
-
     end
+  end
+
+  def search
+
+
   end
 
   def image_params

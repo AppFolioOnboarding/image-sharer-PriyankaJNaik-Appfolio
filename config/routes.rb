@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root 'images#index'
 
   post '/images', to: 'images#save'
-
+  get '/images', to: 'images#index'
+  delete '/images', to: 'images#delete'
 end
