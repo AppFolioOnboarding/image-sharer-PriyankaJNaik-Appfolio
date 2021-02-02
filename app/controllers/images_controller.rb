@@ -24,11 +24,6 @@ class ImagesController < ApplicationController
     end
   end
 
-  def search
-
-
-  end
-
   def image_params
     params.require(:image_url).permit(:image_url, :tag_list);
   end
